@@ -61,7 +61,7 @@ public class Learn {
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        System.out.println("压入1，2");
+        System.out.println("压入1，2, 3");
         System.out.println("目前栈为：" + stack.toString());
         // 栈顶元素
         int value = stack.peek();
@@ -71,10 +71,39 @@ public class Learn {
         System.out.println("此时栈为：" + stack.toString());
     }
 
+    public static void queueDemo() {
+        System.out.println("\n队列写法");
+        Deque<Integer> queue = new LinkedList<>();
+        // 入栈
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        System.out.println("1，2, 3进入队列");
+        System.out.println("目前队列为：" + queue.toString());
+        // 镦首元素
+        int value = queue.peek();
+        System.out.println("队首元素为：" + value);
+        // 出队列
+        queue.poll();
+        System.out.println("此时队列为：" + queue.toString());
+    }
+
+    public static void transDemo() {
+        // 数组转列表
+        String[] strArray = {"3", "2"};
+        ArrayList< String> arrayList = new ArrayList<String>(strArray.length);
+        Collections.addAll(arrayList, strArray);
+        arrayList.add("1");
+        System.out.println(arrayList);
+
+    }
+
     public static void main(String[] args) {
         sortDemo();
         heapqDemo();
         stackDemo();
+        queueDemo();
+        transDemo();
     }
 
 }
